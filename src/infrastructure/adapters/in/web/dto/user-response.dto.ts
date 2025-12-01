@@ -3,14 +3,22 @@ export class UserResponseDto {
   id: string;
   email: string;
   name: string;
+  academycLevel: AcademycLevel;
   createdAt: Date;
   updatedAt: Date;
-  academycLevel:AcademycLevel
 
-  constructor(id: string, email: string, name: string, academyclevel: string , createdAt: Date, updatedAt: Date) {
+  constructor(
+    id: string,
+    email: string,
+    name: string,
+    academyclevel: AcademycLevel,
+    createdAt: Date,
+    updatedAt: Date,
+  ) {
     this.id = id;
     this.email = email;
     this.name = name;
+    this.academycLevel = academyclevel;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }

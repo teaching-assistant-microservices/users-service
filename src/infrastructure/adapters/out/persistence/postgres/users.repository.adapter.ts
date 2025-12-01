@@ -18,6 +18,7 @@ export class UsersRepositoryAdapter implements IUsersRepository {
       email: user.email,
       name: user.name,
       password: user.password,
+      academycLevel: user.academycLevel,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
     });
@@ -52,6 +53,7 @@ export class UsersRepositoryAdapter implements IUsersRepository {
       schema.email,
       schema.name,
       schema.password,
+      schema.academycLevel,
       schema.createdAt,
       schema.updatedAt,
     );
