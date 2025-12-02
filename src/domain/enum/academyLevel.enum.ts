@@ -1,4 +1,4 @@
-export enum AcademycLevel{
+export enum AcademicLevel{
     BASIC = 'Primaria',
     INTERMEDIATE = 'Secundaria',
     ADVANCED = 'Preparatoria',

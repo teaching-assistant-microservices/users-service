@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 import * as bcrypt from 'bcrypt';
 import { User } from '../../domain/model/user.entity';
 import { IUsersRepository } from '../ports/out/users.repository.port';
-import { AcademycLevel } from 'src/domain/enum/academyLevel.enum';
+import { AcademicLevel } from 'src/domain/enum/academyLevel.enum';
 
 @Injectable()
 export class CreateUserUseCase {
@@ -12,7 +12,7 @@ export class CreateUserUseCase {
     private readonly usersRepository: IUsersRepository,
   ) {}
 
-  async execute(email: string, name: string, password: string, academycLevel: AcademycLevel): Promise<User> {
+  async execute(email: string, name: string, password: string, academicLevel: AcademicLevel): Promise<User> {
     // Verificar si el email ya existe
     const existingUser = await this.usersRepository.findByEmail(email);
     if (existingUser) {
@@ -28,7 +28,7 @@ export class CreateUserUseCase {
       email,
       name,
       hashedPassword,
-      academycLevel,
+      academicLevel,
       new Date(),
       new Date(),
     );

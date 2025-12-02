@@ -1,11 +1,11 @@
-import { AcademycLevel } from '../enum/academyLevel.enum';
+import { AcademicLevel } from '../enum/academyLevel.enum';
 
 export class User {
   id: string;
   email: string;
   name: string;
   password: string;
-  academycLevel?: AcademycLevel;
+  academicLevel?: AcademicLevel;
   createdAt: Date;
   updatedAt: Date;
 
@@ -14,7 +14,7 @@ export class User {
     email: string,
     name: string,
     password: string,
-    AcademycLevel:AcademycLevel,
+    academicLevel: AcademicLevel,
     createdAt: Date,
     updatedAt: Date,
   ) {
@@ -22,7 +22,7 @@ export class User {
     this.email = email;
     this.name = name;
     this.password = password;
-    this.academycLevel = AcademycLevel;
+    this.academicLevel = academicLevel;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }

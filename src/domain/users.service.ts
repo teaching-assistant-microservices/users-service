@@ -6,7 +6,7 @@ import { UpdateUserUseCase } from '../application/use-cases/update-user.use-case
 import { DeleteUserUseCase } from '../application/use-cases/delete-user.use-case';
 import { GetUserByIdUseCase } from '../application/use-cases/get-user-by-id.use-case';
 import { GetUserByEmailUseCase } from '../application/use-cases/get-user-by-email.use-case';
-import { AcademycLevel } from './enum/academyLevel.enum';
+import { AcademicLevel } from './enum/academyLevel.enum';
 
 @Injectable()
 export class UsersService implements IUsersService {
@@ -30,8 +30,8 @@ export class UsersService implements IUsersService {
     this.getUserByEmailUseCase = getUserByEmailUseCase;
   }
 
-  async createUser(email: string, name: string, password: string, academycLevel: AcademycLevel): Promise<User> {
-    return await this.createUserUseCase.execute(email, name, password, academycLevel);
+  async createUser(email: string, name: string, password: string, academicLevel: AcademicLevel): Promise<User> {
+    return await this.createUserUseCase.execute(email, name, password, academicLevel);
   }
 
   async updateUser(
@@ -39,9 +39,9 @@ export class UsersService implements IUsersService {
     email?: string,
     name?: string,
     password?: string,
-    academycLevel?:AcademycLevel
+    academicLevel?: AcademicLevel
   ): Promise<User> {
-    return await this.updateUserUseCase.execute(id, email, name, password);
+    return await this.updateUserUseCase.execute(id, email, name, password, academicLevel);
   }
 
   async deleteUser(id: string): Promise<void> {

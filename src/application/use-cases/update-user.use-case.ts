@@ -4,7 +4,7 @@ import { Inject, Injectable, NotFoundException, ConflictException, Logger } from
 import * as bcrypt from 'bcrypt';
 import { User } from '../../domain/model/user.entity';
 import { IUsersRepository } from '../ports/out/users.repository.port';
-import { AcademycLevel } from '../../domain/enum/academyLevel.enum';
+import { AcademicLevel } from '../../domain/enum/academyLevel.enum';
 
 @Injectable()
 export class UpdateUserUseCase {
@@ -20,7 +20,7 @@ export class UpdateUserUseCase {
     email?: string,
     name?: string,
     password?: string,
-    academycLevel?:AcademycLevel
+    academicLevel?: AcademicLevel
   ): Promise<User> {
     try {
       this.logger.log(`Updating user with ID: ${id}`);
@@ -48,7 +48,7 @@ export class UpdateUserUseCase {
       if (password) {
         updateData.password = await bcrypt.hash(password, 10);
       }
-      if(academycLevel) updateData.academycLevel = academycLevel;
+      if(academicLevel) updateData.academicLevel = academicLevel;
 
       const updatedUser = await this.usersRepository.update(id, updateData);
       

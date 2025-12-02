@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength, IsEnum, IsOptional } from 'class-validator';
-import { AcademycLevel } from '../../../../../domain/enum/academyLevel.enum';
+import { AcademicLevel } from '../../../../../domain/enum/academyLevel.enum';
 
 export class CreateUserDto {
   @IsEmail()
@@ -15,7 +15,7 @@ export class CreateUserDto {
   @MinLength(6)
   password: string;
 
-  @IsEnum(AcademycLevel)
+  @IsEnum(AcademicLevel)
   @IsOptional()
-  academycLevel?: AcademycLevel;
+  academicLevel?: AcademicLevel;
 }

@@ -18,14 +18,14 @@ export class UsersController {
       createUserDto.email,
       createUserDto.name,
       createUserDto.password,
-      createUserDto.academycLevel
+      createUserDto.academicLevel
     );
 
     return new UserResponseDto(
       user.id,
       user.email,
       user.name,
-      user.academycLevel,
+      user.academicLevel,
       user.createdAt,
       user.updatedAt,
     );
@@ -49,7 +49,7 @@ export class UsersController {
       user.id,
       user.email,
       user.name,
-      user.academycLevel,
+      user.academicLevel,
       user.createdAt,
       user.updatedAt,
     );
@@ -74,7 +74,7 @@ export class UsersController {
       user.id,
       user.email,
       user.name,
-      user.academycLevel,
+      user.academicLevel,
       user.createdAt,
       user.updatedAt,
     );

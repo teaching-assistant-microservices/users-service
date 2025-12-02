@@ -1,9 +1,9 @@
-import { AcademycLevel } from '../../../../../domain/enum/academyLevel.enum';
+import { AcademicLevel } from '../../../../../domain/enum/academyLevel.enum';
 export class UserResponseDto {
   id: string;
   email: string;
   name: string;
-  academycLevel: AcademycLevel;
+  academicLevel: AcademicLevel;
   createdAt: Date;
   updatedAt: Date;
 
@@ -11,14 +11,14 @@ export class UserResponseDto {
     id: string,
     email: string,
     name: string,
-    academyclevel: AcademycLevel,
+    academicLevel: AcademicLevel,
     createdAt: Date,
     updatedAt: Date,
   ) {
     this.id = id;
     this.email = email;
     this.name = name;
-    this.academycLevel = academyclevel;
+    this.academicLevel = academicLevel;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
